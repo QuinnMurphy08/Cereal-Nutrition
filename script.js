@@ -22,7 +22,7 @@ console.log(fruityCereal);
 var honeyCereal = [];
 
 for(var i = 0; i < cerealName.length; i++){
-    if(cerealName[i].includes("Honey")||cerealName[i].includes("Maypo")||cerealName[i].includes("Graham")){
+    if(cerealName[i].includes("Honey")||cerealName[i].includes("Maypo")||cerealName[i].includes("Graham")||cerealName[i].includes("Clusters")){
         honeyCereal.push(cerealName[i])
     }
 }
@@ -31,11 +31,48 @@ console.log(honeyCereal)
 var chocolateCereal = [];
 
 for (var i = 0; i < cerealName.length; i++) {
-    if (cerealName[i].includes("Chocolate") || cerealName[i].includes("Cocoa") || cerealName[i].includes("Chocula")){
+    if(cerealName[i].includes("Chocolate") || cerealName[i].includes("Cocoa") || cerealName[i].includes("Chocula")){
         chocolateCereal.push(cerealName[i]);
     }
 }
 console.log(chocolateCereal);
+
+var frostedCereal = [];
+
+for(var i = 0; i < cerealName.length; i++){
+    if(cerealName[i].includes("Frost")){
+        frostedCereal.push(cerealName[i])
+    }
+}
+console.log(frostedCereal)
+
+var cinnamonCereal = [];
+
+for(var i = 0; i < cerealName.length; i++){
+    if(cerealName[i].includes("Cinnamon")){
+        cinnamonCereal.push(cerealName[i])
+    }
+}
+console.log(cinnamonCereal)
+
+var plainCereal = [];
+
+for(var i = 0; i < cerealName.length; i++){
+    if(cerealName[i].includes("Wheat")||cerealName[i].includes("Bran")){
+        plainCereal.push(cerealName[i])
+    }
+}
+console.log(plainCereal)
+
+var nuttyCereal = []
+
+for(var i = 0; i < cerealName.length; i++){
+    if(cerealName[i].includes("Nut")||cerealName[i].includes("Almond")){
+        nuttyCereal.push(cerealName[i])
+    }
+}
+console.log(nuttyCereal)
+
 
 function createList(calories,protein,flavor){}
 
@@ -53,5 +90,6 @@ function findCereal(flavor){
     console.log(matchingCereal);
     
  }
+    
     
 
