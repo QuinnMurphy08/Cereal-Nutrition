@@ -1,28 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackathon App</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+var url = "https://raw.githubusercontent.com/b-mcavoy/datasets/refs/heads/main/Science/Cereal%20Nutrition.csv"
+
+//We are suggesting a cereal based on calories, protein, sugar, and fiber
+
+var cerealName = getColumn(url,1);
+var cerealCalories = getColumn(url,2);
+var cerealProtein = getColumn(url,3);
+
+
+
+
+
+var fruityCereal = []
+
+for(var i = 0; i < cerealName.length; i++){
+    if(cerealName[i].includes("Fruit")||cerealName[i].includes("Apple")||cerealName[i].includes("Grape")||cerealName[i].includes("Raisin")||cerealName[i].includes("4")||cerealName[i].includes("Froot")){
+        fruityCereal.push(cerealName[i])
+    }
+}
+console.log(fruityCereal);
+
+var honeyCereal = [];
+
+for(var i = 0; i < cerealName.length; i++){
+    if(cerealName[i].includes("Honey")||cerealName[i].includes("Maypo")||cerealName[i].includes("Graham")||cerealName[i].includes("Clusters")){
+        honeyCereal.push(cerealName[i])
+    }
+}
+console.log(honeyCereal)
+
+var chocolateCereal = [];
+
+for (var i = 0; i < cerealName.length; i++) {
+    if(cerealName[i].includes("Chocolate") || cerealName[i].includes("Cocoa") || cerealName[i].includes("Chocula")){
+        chocolateCereal.push(cerealName[i]);
+    }
+}
+console.log(chocolateCereal);
+
+var frostedCereal = [];
+
+for(var i = 0; i < cerealName.length; i++){
+    if(cerealName[i].includes("Frost")){
+        frostedCereal.push(cerealName[i])
+    }
+}
+console.log(frostedCereal)
+
+var cinnamonCereal = [];
+
+for(var i = 0; i < cerealName.length; i++){
+    if(cerealName[i].includes("Cinnamon")){
+        cinnamonCereal.push(cerealName[i])
+    }
+}
+console.log(cinnamonCereal)
+
+var plainCereal = [];
+
+for(var i = 0; i < cerealName.length; i++){
+    if(cerealName[i].includes("Wheat")||cerealName[i].includes("Bran")){
+        plainCereal.push(cerealName[i])
+    }
+}
+console.log(plainCereal)
+
+var nuttyCereal = []
+
+for(var i = 0; i < cerealName.length; i++){
+    if(cerealName[i].includes("Nut")||cerealName[i].includes("Almond")){
+        nuttyCereal.push(cerealName[i])
+    }
+}
+console.log(nuttyCereal)
+
+
+function createList(calories,protein,flavor){}
+
+
+
+
+function findCereal(flavor){
+    var matchingCereal = []
     
-</head>Cereal Nutrition
-<body>
-    <script src = "utils.js"></script>
-    <script src = "script.js"></script>
-</body>
-</html>
-
-<label>Favorite Flavor: </label>
-    <select id="flavor">
-      <option value="chocolatey">Chocolatey</option>
-      <option value="honey">Honey</option>
-      <option value="cinnamon">Cinnamon</option>
-      <option value="fruity">Fruity</option>
-      <option value="nutty">Nutty</option>
-      <option value="plain">Plain</option>
-      <option value="frosted">Frosted</option>
-
-    </select>
-    <br>
-    <br>
+    for(var i = 0; i < cerealName.length; i++){
+        if(cerealName[i].includes(flavor)){
+            matchingCereal.push(cerealName[i])
+        }
+    }
+    console.log(matchingCereal);
+    
+ }
+    
