@@ -1,0 +1,27 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+  }
+  header{
+    background-color: rgb(63, 193, 67);
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  label{
+    font-size: 20px;
+  }
+  select{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+  }
+  input{
+    font-family: cursive;
+    font-size: 20px;
+  }
+  .outputBox{
+    padding: 10px;
+    min-height: 160px;
+    width: 60%;
+    outline-color: black;
+    outline-style: solid;
+  }
+  
