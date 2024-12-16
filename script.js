@@ -5,6 +5,7 @@ var url = "https://raw.githubusercontent.com/b-mcavoy/datasets/refs/heads/main/S
 var cerealName = getColumn(url,1);
 var cerealCalories = getColumn(url,2);
 var cerealProtein = getColumn(url,3);
+var cerealFlavor;
 
 
 
@@ -74,22 +75,132 @@ for(var i = 0; i < cerealName.length; i++){
 console.log(nuttyCereal)
 
 
-function createList(calories,protein,flavor){}
+// calories
+var highCalories = [];
+
+for(var i = 0; i < cerealCalories.length; i++){
+    if(cerealCalories[i] > 110){
+        highCalories.push(cerealName[i])
+    }
+}
+console.log(highCalories)
+
+var midCalories = [];
+
+for(var i = 0; i < cerealCalories.length; i++){
+    if((110 >= cerealCalories[i])||(cerealCalories[i] >= 100)){
+        midCalories.push(cerealName[i])
+    }
+}
+console.log(midCalories);
+
+var lowCalories = [];
+
+for(var i = 0; i < cerealCalories.length; i++){
+    if(cerealCalories[i] < 100){
+        lowCalories.push(cerealName[i])
+    }
+}
+console.log(lowCalories)
+
+//Protein
+var highProtein = [];
+
+for(var i = 0; i < cerealProtein.length; i++){
+    if(cerealProtein[i] >= 4){
+        highProtein.push(cerealName[i])
+    }
+}
+console.log(highProtein)
+
+var midProtein = [];
+
+for(var i = 0; i < cerealProtein.length; i++){
+    if(cerealProtein[i] > 2 && cerealProtein[i] < 4){
+        midProtein.push(cerealName[i])
+    }
+}
+console.log(midProtein)
+
+var lowProtein = [];
+
+for(var i = 0; i < cerealProtein.length; i++){
+    if(cerealProtein[i] < 3){
+        lowProtein.push(cerealName[i])
+    }
+}
+console.log(lowProtein)
 
 
 
-
-function findCereal(flavor){
+function findCereal(calories,protein,flavor){
     var matchingCereal = []
+    // console.log(cerealName.indexOf("Apple Jacks"))
+    var chosenList = [];
+
+    if(flavor == "honey"){
+        chosenList = honeyCereal;
+    }
+    else if(flavor == "chocolatey"){
+        chosenList = chocolateCereal;
+    }
+    else if(flavor == "plain"){
+        chosenList = plainCereal;
+    }
+    else if(flavor == "nutty"){
+        chosenList = nuttyCereal;
+    }
+    else if(flavor == "fruity"){
+        chosenList = fruityCereal;
+    }
+    else if(flavor == "cinnamon"){
+        chosenList = cinnamonCereal;
+    }
+    else if(flavor == "frosted"){
+        chosenList = frostedCereal;
+    }
+
+
     
+
+
+
+
+    for(var i = 0; i < chosenList.length; i++){
+        var index = cerealName.indexOf(chosenList[i]);
+        if(cerealCalories[index] < calories && )
+
+    }
+
+
+
+
+
     for(var i = 0; i < cerealName.length; i++){
         if(cerealName[i].includes(flavor)){
             matchingCereal.push(cerealName[i])
         }
     }
-    console.log(matchingCereal);
-    
- }
-    
+    for(var i = 0; i < cerealProtein.length; i++){
+        if(cerealProtein[i].includes(protein)){
+            matchingCereal.push(cerealName[i])
+        }
+    }
+    for(var i = 0; i < cerealCalories.length; i++){
+        if(cerealCalories[i].includes(calories)){
+            matchingCereal.push(cerealName[i])
+        }
+    }
     
 
+    // sessionStorage.setItem("matchingCerealList", matchingCereal);
+
+    // var matchingCereal = sessionStorage.getItem("matchingCerealList");
+
+}
+
+
+// console.log(cerealName.indexOf("Basic 4"))
+
+
+    
