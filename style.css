@@ -1,5 +1,7 @@
 body{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Barriecito", system-ui;
+        font-weight: 400;
+        font-style: normal;
   }
   header{
     background-color: rgb(63, 193, 67);
@@ -23,5 +25,12 @@ body{
     width: 60%;
     outline-color: black;
     outline-style: solid;
+  }
+  button{
+    background-color: rgb(63, 193, 67);
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-color: rgb(255, 200, 0);
   }
   
