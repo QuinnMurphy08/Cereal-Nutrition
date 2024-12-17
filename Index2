@@ -5,14 +5,29 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>repl.it</title>
-	<link href="style.css" rel="stylesheet" type="text/css" />
+	
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+<link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
-	<header>Cereal Options</header>
+    <header>
+    <h1>Cereal Options</h1>
+    <p>Here are the cereals we recommend based on your preferences!</p>
+</header>
 
-        
+<div class="outputBox">
+    <h2>Your Cereals</h2>
+        <p id="output"> </p>
 
-    </script>
+</div>
+
+   <script> 
+        var matchingCereal = sessionStorage.getItem("matchingCerealList");
+        document.getElementById("output").innerHTML = matchingCereal
+   </script>
+    
   </body>
 </html>
