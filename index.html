@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hackathon App</title>
@@ -38,3 +41,20 @@
       <option value="nutty">Nutty</option>
       <option value="plain">Plain</option>
       <option value="frosted">Frosted</option>
+      </select>
+      <br>
+      <br>
+
+      <label>Protein: </label>
+      <select id="protein">
+        <option value="medium">Medium </option>
+        <option value="low">Low</option>
+        <option value="high">High</option>
+    </select>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <button onclick = "findCereal(document.getElementById('calories').value, document.getElementById('protein').value, document.getElementById('flavor').value)">Find My Cereal</button> 
