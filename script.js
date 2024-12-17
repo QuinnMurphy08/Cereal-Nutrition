@@ -18,7 +18,7 @@ for(var i = 0; i < cerealName.length; i++){
         fruityCereal.push(cerealName[i])
     }
 }
-console.log(fruityCereal);
+// console.log(fruityCereal);
 
 var honeyCereal = [];
 
@@ -27,7 +27,7 @@ for(var i = 0; i < cerealName.length; i++){
         honeyCereal.push(cerealName[i])
     }
 }
-console.log(honeyCereal)
+// console.log(honeyCereal)
 
 var chocolateCereal = [];
 
@@ -36,7 +36,7 @@ for (var i = 0; i < cerealName.length; i++) {
         chocolateCereal.push(cerealName[i]);
     }
 }
-console.log(chocolateCereal);
+// console.log(chocolateCereal);
 
 var frostedCereal = [];
 
@@ -45,7 +45,7 @@ for(var i = 0; i < cerealName.length; i++){
         frostedCereal.push(cerealName[i])
     }
 }
-console.log(frostedCereal)
+// console.log(frostedCereal)
 
 var cinnamonCereal = [];
 
@@ -54,7 +54,7 @@ for(var i = 0; i < cerealName.length; i++){
         cinnamonCereal.push(cerealName[i])
     }
 }
-console.log(cinnamonCereal)
+// console.log(cinnamonCereal)
 
 var plainCereal = [];
 
@@ -63,7 +63,7 @@ for(var i = 0; i < cerealName.length; i++){
         plainCereal.push(cerealName[i])
     }
 }
-console.log(plainCereal)
+// console.log(plainCereal)
 
 var nuttyCereal = []
 
@@ -72,7 +72,7 @@ for(var i = 0; i < cerealName.length; i++){
         nuttyCereal.push(cerealName[i])
     }
 }
-console.log(nuttyCereal)
+// console.log(nuttyCereal)
 
 
 // calories
@@ -83,7 +83,7 @@ for(var i = 0; i < cerealCalories.length; i++){
         highCalories.push(cerealName[i])
     }
 }
-console.log(highCalories)
+
 
 var midCalories = [];
 
@@ -92,7 +92,8 @@ for(var i = 0; i < cerealCalories.length; i++){
         midCalories.push(cerealName[i])
     }
 }
-console.log(midCalories);
+
+
 
 var lowCalories = [];
 
@@ -101,7 +102,8 @@ for(var i = 0; i < cerealCalories.length; i++){
         lowCalories.push(cerealName[i])
     }
 }
-console.log(lowCalories)
+
+
 
 //Protein
 var highProtein = [];
@@ -111,7 +113,6 @@ for(var i = 0; i < cerealProtein.length; i++){
         highProtein.push(cerealName[i])
     }
 }
-console.log(highProtein)
 
 var midProtein = [];
 
@@ -120,7 +121,7 @@ for(var i = 0; i < cerealProtein.length; i++){
         midProtein.push(cerealName[i])
     }
 }
-console.log(midProtein)
+
 
 var lowProtein = [];
 
@@ -129,12 +130,12 @@ for(var i = 0; i < cerealProtein.length; i++){
         lowProtein.push(cerealName[i])
     }
 }
-console.log(lowProtein)
+
 
 
 
 function findCereal(calories,protein,flavor){
-    var matchingCereal = []
+    // var matchingCereal = []
     // console.log(cerealName.indexOf("Apple Jacks"))
     var chosenList = [];
 
@@ -160,47 +161,47 @@ function findCereal(calories,protein,flavor){
         chosenList = frostedCereal;
     }
 
+    var proteinList = [];
+    if(protein == "low"){
+        proteinList = lowProtein;
+    }
+    else if(protein == "medium"){
+        proteinList = midProtein;
+    }
+    else if(protein == "high"){
+        proteinList = highProtein;
+    }
 
+    var calorieList = [];
+    if(calories == "low"){
+        calorieList = lowCalories;
+    }
+    else if(calories == "medium"){
+        calorieList = midCalories;
+    }
+    else if(calories == "high"){
+        calorieList = highCalories;
+    }
+
+
+    console.log(chosenList);
+    console.log(calorieList);
+    console.log(proteinList);
+    var matchingCereal = [];
     
-
-
-
-
     for(var i = 0; i < chosenList.length; i++){
-        var index = cerealName.indexOf(chosenList[i]);
-        if(cerealCalories[index] < calories && )
-
-    }
-
-
-
-
-
-    for(var i = 0; i < cerealName.length; i++){
-        if(cerealName[i].includes(flavor)){
-            matchingCereal.push(cerealName[i])
+        // var index = cerealName.indexOf(chosenList[i]);
+        if(proteinList.includes(chosenList[i]) && calorieList.includes(chosenList[i])){
+            matchingCereal.push(chosenList[i])
         }
     }
-    for(var i = 0; i < cerealProtein.length; i++){
-        if(cerealProtein[i].includes(protein)){
-            matchingCereal.push(cerealName[i])
-        }
+
+    if(matchingCereal.length == 0){
+        matchingCereal = "No cereal meet your criteria!"
     }
-    for(var i = 0; i < cerealCalories.length; i++){
-        if(cerealCalories[i].includes(calories)){
-            matchingCereal.push(cerealName[i])
-        }
-    }
-    
+    sessionStorage.setItem("matchingCerealList", matchingCereal);
 
-    // sessionStorage.setItem("matchingCerealList", matchingCereal);
-
-    // var matchingCereal = sessionStorage.getItem("matchingCerealList");
-
+    location.replace("cerealpage.html");
+    console.log(matchingCereal);
 }
 
-
-// console.log(cerealName.indexOf("Basic 4"))
-
-
-    
