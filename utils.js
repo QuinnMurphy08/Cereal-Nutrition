@@ -1,4 +1,3 @@
-
 function getColumn(url, columnNumber){
     var column = [];
     var table = [];
