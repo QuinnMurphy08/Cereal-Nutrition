@@ -123,7 +123,7 @@ while(index < cerealProtein.length){
     if(cerealProtein[index] < 3){
         lowProtein.push(cerealName[index])
     }
-    i++;
+    index++;
 }
 
 
@@ -191,12 +191,29 @@ function findCereal(calories,protein,flavor){
     }
 //This says that if there is no cereal that meets the selections made above, to tell the user. 
     if(matchingCereal.length == 0){
-        matchingCereal = "No cereal meet your criteria!"
+        matchingCereal = "No cereal meets your criteria!"
+        sessionStorage.setItem("calorieAverages", "");
+    }
+    else{
+        var sum = 0;
+        var count = 0;
+        for(var i = 0; i < cerealName.length; i++){
+            if(matchingCereal.includes(cerealName[i]) ){
+                sum += parseFloat(cerealCalories[i]);
+                count++;
+                
+            }
+        }
+        sessionStorage.setItem("calorieAverages", "<br>The average calories of these cereals is " + (sum/count) + " calories");
+        console.log(sum/count)
+        
     }
     sessionStorage.setItem("matchingCerealList", matchingCereal);
 //once a selection is made, the find my cereal button takes you to a new page section where you see your cereal options based on your criteria. This code saves the list so it can travel over to the new page
     location.replace("cerealpage.html");
     console.log(matchingCereal);
+
+   
 }
 //once you are in the new page section, this takes you back to the main page after you have gotten your cereals
 function retry(){

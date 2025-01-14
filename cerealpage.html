@@ -28,7 +28,9 @@
 <script src="script.js"></script>
    <script> 
         var matchingCereal = sessionStorage.getItem("matchingCerealList");
-        document.getElementById("output").innerHTML = matchingCereal
+        var average = sessionStorage.getItem("calorieAverages");
+
+        document.getElementById("output").innerHTML = matchingCereal  + average;
    </script>
     
   </body>
